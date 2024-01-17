@@ -13,6 +13,7 @@ export const getTodos = (req: Request, res: Response): void => {
 // Add a new todo
 export const addTodo = (req: Request, res: Response): void => {
   const { title } = req.body;
+
   if (!title) {
     res.status(400).json({ error: 'Title is required' });
     return;

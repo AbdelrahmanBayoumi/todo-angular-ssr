@@ -23,12 +23,12 @@ export class TodoListComponent {
   onAddTodo(): void {
     this.todoService
       .addTodo('New Todo ' + Math.floor(Math.random() * 1000))
-      .subscribe((todos) => (this.todos = todos));
+      .subscribe((todo) => this.todos.push(todo));
   }
 
   onDelete(todo: Todo): void {
     this.todoService
       .deleteTodo(todo.id)
-      .subscribe((todos) => (this.todos = todos));
+      .subscribe(() => (this.todos = this.todos.filter((t) => t.id !== todo.id)));
   }
 }
