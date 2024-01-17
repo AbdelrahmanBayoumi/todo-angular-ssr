@@ -1,27 +1,55 @@
-# TodoAngularSsr
+# Todo Angular SSR Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+## Description
 
-## Development server
+This is a simple Todo application built with Angular and server-side rendering (SSR) using Express. The application features a Todo interface where users can manage their tasks. Both the frontend and the API are served through the same Express server, which enables efficient SSR for improved performance and SEO.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Angular-based frontend with a clean and user-friendly interface for managing Todos.
+- Server-Side Rendering (SSR) with Angular for enhanced performance and search engine optimization.
+- A RESTful API for Todos, allowing operations like adding, deleting, and updating tasks.
+- Integration of Angular SSR and Client-Side Rendering (CSR) in a single Express server.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+Before installing, ensure you have Node.js installed on your system. Then, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Run `npm install` to install all dependencies.
 
-## Running unit tests
+## Running the Application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To start the application, use one of the following commands:
 
-## Running end-to-end tests
+- `npm start`: Starts the Angular development server for client-side development.
+- `npm run serve:ssr`: Builds the application and starts the Express server for SSR.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The application will be available at `http://localhost:4000`.
 
-## Further help
+## Development
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Use `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- For continuous building during development, use `npm run watch`.
+
+## API Endpoints
+
+The application includes the following API endpoint for managing Todos:
+
+- `GET /api/todos`: Retrieve all Todos.
+- `POST /api/todos`: Add a new Todo.
+- `PUT /api/todos/:id`: Update an existing Todo.
+- `DELETE /api/todos/:id`: Delete a Todo.
+
+## Technologies Used
+
+- Angular ^17.0.0: For building the user interface.
+- Angular SSR ^17.0.10: For server-side rendering capabilities.
+- Express ^4.18.2: As the backend framework.
+- Node.js: For the server environment.
+- TypeScript ~5.2.2: As the primary programming language.
+
+## Contributions
+
+Contributions to this project are welcome. Please ensure to follow the standard coding conventions and add unit tests for new features.
