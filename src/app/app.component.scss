@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 10px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 15px;
+    &:hover {
+      background-color: var(--light-blue);
+    }
+  }
+
+  .active {
+    background-color: var(--light-blue);
+  }
+}

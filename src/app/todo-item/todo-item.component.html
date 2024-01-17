@@ -1,1 +1,6 @@
-<p>todo-item works!</p>
+@if(todo){
+<div class="todo-item">
+  <span>{{ todo.title }}</span>
+  <button (click)="onDelete()">Delete</button>
+</div>
+}

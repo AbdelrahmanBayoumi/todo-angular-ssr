@@ -1,10 +1,13 @@
+import { NgForOf } from '@angular/common';
 import { Component } from '@angular/core';
 import { Todo } from '../models/todo.model';
 import { TodoService } from '../services/todo.service';
+import { TodoItemComponent } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
+  imports: [TodoItemComponent, NgForOf],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss',
 })
@@ -15,5 +18,17 @@ export class TodoListComponent {
 
   ngOnInit(): void {
     this.todoService.getTodos().subscribe((todos) => (this.todos = todos));
+  }
+
+  onAddTodo(): void {
+    this.todoService
+      .addTodo('New Todo ' + Math.floor(Math.random() * 1000))
+      .subscribe((todos) => (this.todos = todos));
+  }
+
+  onDelete(todo: Todo): void {
+    this.todoService
+      .deleteTodo(todo.id)
+      .subscribe((todos) => (this.todos = todos));
   }
 }

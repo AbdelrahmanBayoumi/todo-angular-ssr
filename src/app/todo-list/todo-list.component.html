@@ -1,1 +1,9 @@
-<p>todo-list works!</p>
+<div class="main-container">
+  <button class="btn blue-btn" (click)="onAddTodo()">Add Todo</button>
+
+  <div class="todo-list">
+    @for (todo of todos; track todo.id) {
+    <app-todo-item [todo]="todo" (delete)="onDelete(todo)"></app-todo-item>
+    }
+  </div>
+</div>
