@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import {
@@ -13,6 +13,7 @@ import {
 } from '@angular/platform-browser';
 import { routes } from './app.routes';
 import { TodoService } from './services/todo.service';
+import { provideServiceWorker } from '@angular/service-worker';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,5 +22,9 @@ export const appConfig: ApplicationConfig = {
     TodoService,
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
     provideClientHydration(),
-  ],
+    provideServiceWorker('ngsw-worker.js', {
+        enabled: !isDevMode(),
+        registrationStrategy: 'registerWhenStable:30000'
+    })
+],
 };
